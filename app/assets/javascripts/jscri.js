@@ -1,4 +1,3 @@
-
 $(document).ready(function() {
 	$("#button_tag1").click(function(event){
 		
@@ -10,7 +9,7 @@ $(document).ready(function() {
           		for (i = 1; i < result.length; i++)
           		{
               		content += "<tr><td>" + result[i].name1 + "</td><td>" + result[i].job + "</td></tr>";
-      			}      
+      			 }      
            		content += "</table>";
 
       			$("#p1").append(content);
@@ -38,6 +37,6 @@ var map=new google.maps.Map(document.getElementById("map1"),mapProp);
 var marker=new google.maps.Marker({
   position:myCenter,
   });
-
+var p;
 marker.setMap(map);
 }
