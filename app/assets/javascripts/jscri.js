@@ -6,7 +6,7 @@ $(document).ready(function() {
           var content = "<table>";
           var i;
           content += "<tr><td><strong>" + " Name " + "</strong></td><td><strong>" + " Job " + "</strong></td></tr>";
-              for (i = 8; i < result.length; i++)
+              for (i = 9; i < result.length; i++)
               {
                   content += "<tr><td>" + result[i].name1 + "</td><td>" + result[i].job + "</td></tr>";
             }      
