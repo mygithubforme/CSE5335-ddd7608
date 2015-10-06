@@ -48,6 +48,7 @@ for(i=0;i<3;i++)
   bounds.extend(pos);
   marker=new google.maps.Marker({
   position: pos,
+  animate: bounce,
   map: map
   });
  // map.setCenter(marker.getPosition());  
