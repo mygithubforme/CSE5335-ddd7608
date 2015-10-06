@@ -2,7 +2,10 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 <script type="text/javascript" language="javascript">
 </script>
-<script src="http://maps.googleapis.com/maps/api/js"></script>
+<script src="http://maps.googleapis.com/maps/api/js">
+google.setOnLoadCallback(drawChart);
+google.load("visualization", "1", {packages:["corechart"]});
+</script>
 <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAmoPLGjD04yI95JE5c_AnoDiCO3u4zgXQ&callback=initMap">
     </script>
 <h1>Welcome to Homepage</h1>
@@ -25,3 +28,7 @@
 <br/>
 <br/>
 <div id="map1" style="width:1000px;height:400px;"></div>
+<br/>
+<br/>
+<br/>
+<div id="chart1"></div>

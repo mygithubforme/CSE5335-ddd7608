@@ -27,6 +27,34 @@ $(document).ready(function() {
   });
 });
 
+function drawChart(){
+   $("#button_tag1").click(function(){
+   // Create the data table.
+   $.getJSON("demo_json.json", function(result){
+
+      var data = new google.visualization.DataTable();
+      data.addColumn('string', 'Activity');
+      data.addColumn('number', 'Hours');
+      data.addRows([
+        [(result[3].name1).toString(), Number(result[3].job)],
+        [(result[4].name1).toString(), Number(result[4].job)],
+        [(result[5].name1).toString(), Number(result[5].job)],
+        [(result[6].name1).toString(), Number(result[6].job)],
+        [(result[7].name1).toString(), Number(result[7].job)],
+        [(result[8].name1).toString(), Number(result[8].job)]
+      ]);
+
+      // Set chart options
+      var options = {'title':'My whole day as a Pie Chart',
+                     'width':400,
+                     'height':300};
+
+      // Instantiate and draw our chart, passing in some options.
+      var chart = new google.visualization.PieChart(document.getElementById('chart1'));
+      chart.draw(data, options);
+    });
+ });
+    }
 
 
 function initialize(result)
