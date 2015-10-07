@@ -1,12 +1,12 @@
 $(document).ready(function() {
   $("#button_tag1").click(function(event){
     
-    $.getJSON("welcome/demo_json.json", function(result){
+    $.getJSON("demo_json.json", function(result){
           
           var content = "<table>";
           var i;
           content += "<tr><td><strong>" + " Name " + "</strong></td><td><strong>" + " Job " + "</strong></td></tr>";
-              for (i = 9; i < result.length; i++)
+              for (i = 12; i < result.length; i++)
               {
                   content += "<tr><td>" + result[i].name1 + "</td><td>" + result[i].job + "</td></tr>";
             }      
@@ -19,29 +19,28 @@ $(document).ready(function() {
 
             $("#p2").append(LatLng);
 
-            //var myCenter=new google.maps.LatLng(result[0].name1,result[0].job);
-
             initialize(result);
             //drawChart();
         });
   });
 });
 
+
 function drawChart(){
    $("#button_tag1").click(function(){
    // Create the data table.
-   $.getJSON("welcome/demo_json.json", function(result){
+   $.getJSON("demo_json.json", function(result){
 
       var data = new google.visualization.DataTable();
       data.addColumn('string', 'Activity');
       data.addColumn('number', 'Hours');
       data.addRows([
-        [(result[3].name1).toString(), Number(result[3].job)],
-        [(result[4].name1).toString(), Number(result[4].job)],
-        [(result[5].name1).toString(), Number(result[5].job)],
         [(result[6].name1).toString(), Number(result[6].job)],
         [(result[7].name1).toString(), Number(result[7].job)],
-        [(result[8].name1).toString(), Number(result[8].job)]
+        [(result[8].name1).toString(), Number(result[8].job)],
+        [(result[9].name1).toString(), Number(result[9].job)],
+        [(result[10].name1).toString(), Number(result[10].job)],
+        [(result[11].name1).toString(), Number(result[11].job)]
       ]);
 
       // Set chart options
@@ -55,6 +54,9 @@ function drawChart(){
     });
  });
     }
+  
+
+ 
 
 
 function initialize(result)
@@ -63,13 +65,13 @@ function initialize(result)
 var bounds = new google.maps.LatLngBounds();
 var mapProp = {
   center: new google.maps.LatLng(result[0].name1,result[0].job),
-  zoom:10,
+  zoom:7,
   mapTypeId:google.maps.MapTypeId.ROADMAP
   };
 var marker;
 var map=new google.maps.Map(document.getElementById("map1"),mapProp);
 var i,pos;
-for(i=0;i<3;i++)
+for(i=0;i<6;i++)
 { 
  // alert(result[0].name1);
   pos = new google.maps.LatLng(result[i].name1,result[i].job);
