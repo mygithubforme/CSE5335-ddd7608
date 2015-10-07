@@ -1,7 +1,7 @@
 $(document).ready(function() {
   $("#button_tag1").click(function(event){
     
-    $.getJSON("demo_json.json", function(result){
+    $.getJSON("welcome/demo_json.json", function(result){
           
           var content = "<table>";
           var i;
