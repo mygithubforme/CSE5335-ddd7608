@@ -29,7 +29,7 @@ $(document).ready(function() {
 function drawChart(){
    $("#button_tag1").click(function(){
    // Create the data table.
-   $.getJSON("demo_json.json", function(result){
+   $.getJSON("welcome/demo_json.json", function(result){
 
       var data = new google.visualization.DataTable();
       data.addColumn('string', 'Activity');
